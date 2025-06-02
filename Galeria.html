@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pasteles - Panadería Lupita</title>
+  
+  <!-- Ícono de página -->
+  <link rel="shortcut icon" href="img/LOGO PAN 1.png" type="image/x-icon">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #6E4B3A;
+    }
+
+    .gallery-img {
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+      max-height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    .lightbox.show {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .lightbox-caption {
+      color: white;
+      margin-top: 15px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .lightbox-close {
+      color: #6E4B3A;
+      font-size: 40px;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+    }
+
+    .titulo {
+      font-size: 50px;
+      margin: 40px 0 20px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: black;
+    }
+  
+    .galería .col {
+      margin-bottom: 25px;
+    }
+  
+    .galería img {
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .galería img:hover {
+      transform: scale(1.05);
+    }
+  
+    @media screen and (max-width: 600px) {
+      .galería .col {
+        margin-bottom: 20px;
+      }
+    }
+
+    /*article y narvbar*/
+
+    .navbar {
+    background-color: #8B5E3C !important; /* Cambia este color según prefieras Menu */
+}
+    article {
+  background-color: #F2E1C1; /* Color de fondo pastel clarito */
+  padding: 30px; /* Espaciado interno para que no quede pegado */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombrita suave */
+}
+article {
+  background-color: #F2E1C1; /* El mismo fondo bonito */
+  padding: 20px; /* Un poquito de espacio interno */
+  border-radius: 0; /* ¡Sin bordes redondeados! */
+  box-shadow: none; /* ¡Sin sombra! */
+  width: 100%; /* Que abarque todo el ancho disponible */
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Encabezado -->
+  <section>
+    <!-- LOGO y TÍTULO -->
+    <table class="header-img" align="center" border="0">
+        <tr>
+            <th class="left-h" scope="col">
+                <img src="img/LOGO PAN 1.png" alt="Logo" width="150">
+            </th>
+            <th class="right-h" scope="col">
+                <img src="img/Cool Text - LUPITA 480186818699602.png" alt="Título" width="300">
+            </th>
+        </tr>
+    </table>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Nosotros.html">Nosotros</a>
+               <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Productos
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="Postres.html">Postres</a></li>
+                <li><a class="dropdown-item" href="Pasteles.html">Pasteles</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="Panes.html">Panes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Galeria.html">Galeria</a>
+            </li>
+
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Horario.html">Horarios</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="FormClientes.html">Contáctanos</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+          </form>
+        </div>
+      </div>
+    </nav>
+    <article>
+  <!-- Título -->
+  <section class="container text-center my-5">
+    <h2 class="titulo">Galería de Productos.</h2>
+  </section>
+
+  <!-- Galería de Pasteles -->
+  <section class="container">
+    <div class="row justify-content-center">
+
+      <!-- Cada imagen -->
+      <div class="col-auto mb-4">
+        <img src="img/PAN 15.jpg" class="gallery-img" data-caption="Concha" onclick="openLightbox(this)">
+      </div>
+      <div class="col-auto mb-4">
+        <img src="imgGal/PAN 10.png" class="gallery-img" data-caption="Pan de Muertos" onclick="openLightbox(this)">
+      </div>
+      <div class="col-auto mb-4">
+        <img src="imgGal/PASTEL.jpeg" class="gallery-img" data-caption="Pastel de Chocolate" onclick="openLightbox(this)">
+      </div>
+      <div class="col-auto mb-4">
+        <img src="img/pastel de nuez.jpg" class="gallery-img" data-caption="Pastel de Chocolate con Nuez" onclick="openLightbox(this)">
+      </div>
+      <div class="col-auto mb-4">
+        <img src="imgGal/PAN 22.png" class="gallery-img" data-caption="Cupcakes" onclick="openLightbox(this)">
+      </div>
+      <div class="col-auto mb-4">
+        <img src="imgGal/PAN 9.png" class="gallery-img" data-caption="Cupcakes" onclick="openLightbox(this)">
+      </div>
+      <div class="col-auto mb-4">
+        <img src="img/donas galeria.jpg" class="gallery-img" data-caption="Donas de Chocolate" onclick="openLightbox(this)">
+      </div>
+      <div class="col-auto mb-4">
+        <img src="img/donas lechesillas.jpg" class="gallery-img" data-caption="Donas de Lechesilla" onclick="openLightbox(this)">
+      </div>
+
+    </div>
+  </section>
+</seccion>
+<br>
+<section>
+  <section class="text-center">
+    <font size="6" face="calibri" color="black">
+      <br>
+      <i> PRODUCTOS MÁS DESTACADOS.</i>
+  </font>
+</section>
+<br>
+<section>
+
+  <section class="container mt-4">
+  <div class="row justify-content-center">
+    <!-- Primer fila con 4 productos -->
+    <div class="col-md-3 text-center mb-4">
+      <img src="imgGal/PAN 25.jpg" class="img-fluid rounded" alt="Rosca de Reyes" style="max-height: 250px; object-fit: cover;">
+      <h3>Rosca de Reyes</h3>
+      <p>Tradicional, suave y esponjosa. Perfecta para compartir en reuniones especiales o celebrar el Día de Reyes con sabor auténtico.</p>
+    </div>
+
+    <div class="col-md-3 text-center mb-4">
+  <img src="img/pizza.jpg" class="img-fluid rounded" alt="Pizza artesanal" style="max-height: 250px; object-fit: cover;">
+  <h3>Pizza Artesanal</h3>
+  <p>Masa crujiente, salsa casera y queso derretido. Una explosión de sabores que convierte cualquier comida en una celebración.</p>
+</div>
+
+    <div class="col-md-3 text-center mb-4">
+      <img src="imgGal/PAN 22.png" class="img-fluid rounded" alt="Cupcakes para eventos" style="max-height: 250px; object-fit: cover;">
+      <h3>Cupcakes para Eventos</h3>
+      <p>Coloridos, divertidos y llenos de sabor. Son el detalle perfecto para alegrar cualquier celebración o reunión.</p>
+    </div>
+
+    <div class="col-md-3 text-center mb-4">
+      <img src="img/PAN 5.jpg" class="img-fluid rounded" alt="Pan de Muerto" style="max-height: 250px; object-fit: cover;">
+      <h3>Pan de Muerto</h3>
+      <p>Tradición mexicana con un toque dulce y suave aroma a azahar. Ideal para honrar y compartir durante el Día de Muertos.</p>
+    </div>
+  </div>
+</section>
+
+
+  </section>
+  
+  </section>
+  
+</section>
+</section>
+</article>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <img src="" alt="Imagen ampliada" class="lightbox-img" id="lightboxImg">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+ <footer>
+    <font size="4" face="calibri" color="black">
+        <h2>¡¡NUESTRAS REDES SOCIALES!!</h2>
+    </font>
+    <br>
+    <a href="https://wa.me/529515097253" target="_blank">
+        <img src="img/whasttApp.png" alt="whatsapp" class="social-icon">
+    </a>
+    <a href="https://www.facebook.com/elsaguadalupe.cansecosantos">
+        <img src="img/Feecbok.png" alt="facebook" class="social-icon">
+    </a>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const caption = document.getElementById('lightboxCaption');
+      lightbox.classList.add('show');
+      lightboxImg.src = img.src;
+      caption.textContent = img.getAttribute('data-caption');
+    }
+
+    function closeLightbox(event) {
+      if (event) event.stopPropagation();
+      document.getElementById('lightbox').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>
